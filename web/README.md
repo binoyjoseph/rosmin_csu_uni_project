@@ -229,12 +229,12 @@ requirements.)
 # Notes
 
 Examples
-https://aadi.is-a.dev/
-https://www.spicedbybillus.com.au/
-https://www.chotiwala.com.au/
-https://malabarcuisine.com.au/
-https://www.keralakitchen.com.au/ 
-https://www.geeksforgeeks.org/javascript/how-to-create-a-portfolio-website-using-html-css-and-javascript/
+- https://aadi.is-a.dev/
+- https://www.spicedbybillus.com.au/
+- https://www.chotiwala.com.au/
+- https://malabarcuisine.com.au/
+- https://www.keralakitchen.com.au/ 
+- https://www.geeksforgeeks.org/javascript/how-to-create-a-portfolio-website-using-html-css-and-javascript/
 
 Images
-https://www.pexels.com/photo/sadya-dish-on-banana-leaf-5410418/ 
+- https://www.pexels.com/photo/sadya-dish-on-banana-leaf-5410418/ 
