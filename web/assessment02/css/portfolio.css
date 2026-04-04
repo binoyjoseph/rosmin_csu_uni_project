@@ -1,31 +1,25 @@
 /*
-    portfolio.css
-    Author: Rosmin Roy
-    Date: 31 March 2026
-    Description: External stylesheet for the Assessment 02 portfolio website.
+portfolio.css
+Author: Rosmin Roy
+Date: 31 March 2026
+Description: External stylesheet
 */
 
-/* =====================
-   General / Body Styles
-   ===================== */
-
-/* Background colour applied to the entire webpage */
+/* Background colour applied to the entire Webpage */
 body {
     background-color: #f5f0eb;
-    font-family: Arial, Helvetica, Geneva, sans-serif; /* font family with four typefaces */
+    font-family: Arial, Helvetica, Geneva, sans-serif; /* Font-family with Four typefaces */
     font-size: 16px;
-    color: #222222; /* text colour 1 */
+    color: #222222;
     margin: 0;
     padding: 0;
 }
 
-/* =====================
-   Navigation Bar
-   ===================== */
+/* Navigation bar */
 
-/* Horizontal navigation container */
+/* Horizontal navigation Containr */
 nav {
-    background-color: #6a9a22; /* background colour 2 */
+    background-color: #6a9a22;
     padding: 10px 0;
 }
 
@@ -42,49 +36,43 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff; /* text colour 2 (white on dark background) */
-    text-decoration: none; /* text-decoration 1: none */
-    font-weight: bold; /* font-weight 1: bold */
-    font-size: 18px; /* font-size 2 */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 nav ul li a:hover {
-    text-decoration: underline; /* text-decoration 2: underline on hover */
+    text-decoration: underline;
 }
 
-/* =====================
-   Page Header / Banner
-   ===================== */
+/* Page header */
 
 #page-header {
     background-color: #6a9a22;
     color: #ffffff;
     padding: 20px;
-    text-align: center; /* text alignment 2: center */
+    text-align: center; /* text alignment 2: centre */
 }
 
 #page-header h1 {
     margin: 0;
     font-size: 28px;
-    font-style: italic; /* font-style 1: italic */
+    font-style: italic; /* Font-style 1: italic */
 }
 
-/* =====================
-   Main Content Area
-   ===================== */
+/*    Main Content Area = */
 
 .main-content {
     padding: 20px 40px;
-    text-align: left; /* text alignment 1: left */
+    text-align: left; /* Text alignment 1: left */
 }
 
-/* =====================
-   Headings
-   ===================== */
+/*   Headings */
 
 h2 {
     color: #6a9a22;
-    font-size: 22px; /* font-size 2 */
+    font-size: 22px; /* Font-size 2 */
     font-weight: bold;
     border-bottom: 1px solid #6a9a22;
     padding-bottom: 4px;
@@ -97,47 +85,41 @@ h3 {
     font-size: 18px;
 }
 
-/* =====================
-   Paragraphs
-   ===================== */
+/*    Paragraphs */
 
 p {
     line-height: 1.6;
     margin-bottom: 12px;
 }
 
-/* Center-aligned paragraph class */
+/* Center-aligned Paragraph class */
 .align-center {
-    text-align: center; /* text alignment 2: center */
+    text-align: center; /* Text alignment 2: center */
 }
 
 /* Right-aligned paragraph class */
 .align-right {
-    text-align: right; /* text alignment 3: right */
+    text-align: right; /* Text-alignment 3: right */
 }
 
-/* =====================
-   Lists
-   ===================== */
+/*   Lists*/
 
-/* Unordered list: square bullets */
+/* Unordered list: Square bullets */
 ul {
     list-style-type: square;
     padding-left: 24px;
 }
 
-/* Ordered list: Roman numerals */
+/* Ordered list: Roman Numerals */
 ol {
     list-style-type: upper-roman;
     padding-left: 24px;
 }
 
 
-/* =====================
-   Class and ID Selectors
-   ===================== */
+/* Class and ID Selectors */
 
-/* Class selector: used to highlight key information */
+/* Class selector */
 .highlight {
     background-color: #fdf3e3;
     border-left: 4px solid #6a9a22;
@@ -145,7 +127,7 @@ ol {
     font-weight: bold;
 }
 
-/* ID selector: used for the footer section */
+/* ID selector used for the footer section */
 #page-footer {
     background-color: #6a9a22;
     color: #ffffff;
@@ -159,10 +141,7 @@ ol {
     color: #ffd9b3;
 }
 
-/* =====================
-   Images
-   ===================== */
-
+/* Images */
 img {
     max-width: 100%;
     height: auto;
