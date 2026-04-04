@@ -14,20 +14,14 @@ skills as a web developer. Each assessment builds upon the previous. So it is a 
 review the goals of all the items so that you will be well prepared for all the tasks.
 Assessment item 4 requires you to deliver your final website as well as give a live interview
 where you will demonstrate your site and explain the skills you have. In order to
-demonstrate what you can do for a possible employer, you will theme the whole site
-consistently in a way that matches a **fictious company**. Some pages will be about you, but
+demonstrate what you can do for a possible employer, you will **theme the whole site consistently** in a way that matches a **fictious company**. Some pages will be about you, but
 others will be example pages for the company that the employer could see themselves.
 
-## Fictious Company: A restaurant named "Spice Blend"
-
-I built a website for a fictious restaurant named "Spice Blend" which is an Indian fine dining restaurant, serving North Indian and South Indian speciality dishes catering to Australian hospitality. An example for such a real website is https://thesecretkitchenaustralia.com.au/.
-
 # Assessment item 02 - Basic HTML and CSS
-
-This assessment item focusses on the pages about yourself.
+This assessment item focuses on the pages about yourself.
 
 **Task**
-Your task is to create a "portfolio website" and submit a report in pdf format regarding your design. The report will highlight the fundamental attributes imperative for developing a personal website. The work would have given due consideration to the significance of a user-friendly interface and easy navigation while designing the website, along with ensuring that the website comprises succinct and lucid content, pertinent images and videos, and a professional design that is reflective of the website owner's personality and brand. Furthermore, the report should outline the validation process of HTML and external CSS files and emphasise the importance of storing images, documents, and HTML files in an appropriate folder structure.
+Your task is to create a "portfolio website" and submit a report in pdf format regarding your design. The report will highlight the fundamental attributes imperative for developing a personal website. The work would have given due consideration to the significance of a user-friendly interface and easy navigation while designing the website, along with ensuring that the website comprises succinct and lucid content, pertinent images and videos, and a **professional design** that is reflective of the website owner's personality and brand. Furthermore, the report should outline the validation process of HTML and external CSS files and emphasise the importance of storing images, documents, and HTML files in an appropriate folder structure.
 
 - Create a concept map.
 - Create 4 HTML files within the main folder called:
@@ -228,13 +222,6 @@ requirements.)
 
 # Notes
 
-Examples
-- https://aadi.is-a.dev/
-- https://www.spicedbybillus.com.au/
-- https://www.chotiwala.com.au/
-- https://malabarcuisine.com.au/
-- https://www.keralakitchen.com.au/ 
-- https://www.geeksforgeeks.org/javascript/how-to-create-a-portfolio-website-using-html-css-and-javascript/
+## Fictious Company: A restaurant named "Spice Blend"
 
-Images
-- https://www.pexels.com/photo/sadya-dish-on-banana-leaf-5410418/ 
+I built a website for a fictious restaurant named "Spice Blend" which is an Indian fine dining restaurant, serving North Indian and South Indian speciality dishes catering to Australian hospitality. An example for such a real website is https://www.keralakitchen.com.au/.

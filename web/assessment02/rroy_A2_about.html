@@ -2,102 +2,114 @@
 <html lang="en">
 
 <head>
-    <!-- About page for Spice Blend portfolio (Assessment 02) -->
+    <!-- About page for Portfolio -->
     <!-- Author: Rosmin Roy -->
-    <!--  Date: 2026-03-21 -->
+    <!--  Date: 31 March 2026 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--  page title to the document head-->
-    <title>Spice Blend Portfolio - Home</title>
+    <!--  page title -->
+    <title>About Me - Rosmin's Portfolio</title>
 
     <!-- External style sheet -->
     <link rel="stylesheet" href="css/portfolio.css">
 
     <!-- Internal style sheet -->
     <style>
-        
-        .eltdf-position-center nav {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            z-index: 1;
-            box-sizing: border-box;
-            display: inline-block;
-            vertical-align: middle;
-            position: relative;
-            height: 50px;
+        .about-section {
+            margin-bottom: 24px;
         }
 
-
-        .external {
-            color: #007BFF;
-            text-decoration: none;
+        .hobbies-list {
+            background-color: #fff8e8;
+            padding: 12px 12px 12px 32px;
+            border-left: 3px solid #c27d16;
         }
-
-        .link {
-            font-size: 14px;
-            font-family: sans-serif;
-            text-transform: uppercase;
-            letter-spacing: .36em;
-            box-sizing: border-box;
-        }
-        
     </style>
 </head>
 
 <body>
 
-<!-- Horizontal Navigation -->
-<!-- Internal links -->
-    <div class="eltdf-position-center">
-        <nav>
-                <a href="index.html" class="link" style="text-decoration: none;">Home</a>
-                <a href="rroy_A2_about.html" style="text-decoration: none;">About</a>
-                <a href="rroy_A2_resume.html" style="text-decoration: none;">Resume</a>
-                <a href="rroy_A2_web_skills.html" style="text-decoration: none;">Web Skills</a>
-        </nav>
+    <!-- Page Header -->
+    <div id="page-header">
+        <!-- h1 heading and Inline style -->
+        <h1 style="font-size: 26px;">About Me</h1>
+        <!-- &mdash; is a character reference -->
+        <p>Rosmin Roy &mdash; Personal Portfolio</p>
     </div>
 
-<!-- Inline style -->
+    <!-- Horizontal Navigation -->
+    <nav>
+        <ul>
+            <!-- Internal links -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="rroy_A2_resume.html">Resume</a></li>
+            <li><a href="rroy_A2_web_skills.html">Web Skills</a></li>
+        </ul>
+    </nav>
 
-    <!-- Headings -->
-    <h1>Welcome to Spice Blend - An Indian Restaurant Brand Portfolio</h1>
+    <!-- main-content section -->
+    <div class="main-content">
 
-    <!-- Paragraphs -->
-    <p>Welcome to the Spice Blend portfolio home page. This is a demonstration of HTML structure, CSS styling, and content organization for a restaurant brand concept. Use the navigation above to explore the About, Resume, and Web Skills pages.</p>
+        <!-- Headings -->
+        <h2>Welcome to My Portfolio</h2>
 
-    <p>Spice Blend is an Indian fine-dining restaurant concept that serves as a case study for web development skills. Each page in this portfolio highlights different aspects of design, structure, and content presentation.</p>
+        <!-- Paragraphs -->
+        <p>Welcome to my portfolio home page.</p>
+        <p>Here you will find information about my background, skills, and projects.</p>
 
-    <!-- Ordered list -->
-    <ol>
-        <li>Introduction to Spice Blend</li>
-        <li>Our Menu</li>
-        <li>Location and Hours</li>
-    </ol>
+        <!-- Images -->
+        <img src="images/profile.png" alt="Profile Picture" width="100" height="100">
 
-    <!-- Unordered list -->
-    <ul>
-        <li>Spice Blend Philosophy</li>
-        <li>Our Chefs</li>
-        <li>Testimonials</li>
-    </ul>
+        <h2>Personal Details</h2>
 
-    <!-- Images-->
-    <img src="images/pexels-photo-5410418.jpeg" alt="Spice Blend Dish"  style="width:100%; max-width:600px;">
+        <!-- Unordered list -->
+        <ul>
+            <li>Name: Rosmin Roy</li>
+            <li>Location: Sydney, NSW, Australia</li>
+            <li>Degree: Bachelor of Educational Studies</li>
+            <li>University: Charles Sturt University</li>
+            
+        </ul>
+        <p>
+            Connect with me on
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>.
+        </p>
 
-    <!--  External links -->
-    <p>Learn more about Indian cuisine and restaurant branding by visiting <a class="external" href="https://thecurryhouse.com.au/">Food & Wine - Indian Cuisine</a>.</p>
 
-    <p>Contact me via email or phone, and check out the internal links to learn more about my career and projects.</p>
+        <!-- Interests and Hobbies &amp; is a character reference -->
+        <h2 id="interests">Interests &amp; Hobbies</h2>
 
-    <!-- Email and phone links -->
-    <p>Contact: <a href="mailto:rosmin.roy@example.com">Email</a> | <a href="tel:+1234567890">Phone</a></p>
+        <p>
+            Below is a list of my main hobbies and interests:
+        </p>
 
-    <!-- Character reference-->
+        <!-- Ordered list -->
+        <ol class="hobbies-list">
+            <li>Web Development</li>
+            <li>Cooking &amp; Exploring Cuisines</li>
+            <li>Catching up with friends</li>
+        </ol>
 
+         <!-- span element -->
+        <p>
+            My student ID is <span style="font-weight: bold; color: #c27d16;">12345678</span>.
+        </p>
+
+    </div>
+    <!-- End main-content div -->
+
+    <!-- Page Footer -->
+    <div id="page-footer">
+        <p>
+            <!-- &copy; is a character reference -->
+            &copy; 2026 Rosmin Roy |
+            <!-- Email and phone links -->
+            <a href="mailto:rosmin.roy@sample.com">rosmin.roy@sample.com</a> |
+            <a href="tel:+61400000000">+61 400 000 000</a>
+        </p>
+    </div>
 
 </body>
     
