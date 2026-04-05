@@ -2,24 +2,21 @@
 portfolio.css
 Author: Rosmin Roy
 Date: 31 March 2026
-Description: External stylesheet
 */
 
-/* Background colour applied to the entire Webpage */
+/* Background colour for entire web page */
 body {
-    background-color: #f5f0eb;
-    font-family: Arial, Helvetica, Geneva, sans-serif; /* Font-family with Four typefaces */
+    background-color: ivory;
+    font-family: Arial, Helvetica, Geneva, sans-serif;
     font-size: 16px;
-    color: #222222;
+    color: black;
     margin: 0;
     padding: 0;
 }
 
-/* Navigation bar */
-
 /* Horizontal navigation Containr */
 nav {
-    background-color: #6a9a22;
+    background-color: olivedrab;
     padding: 10px 0;
 }
 
@@ -36,7 +33,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
@@ -47,10 +44,9 @@ nav ul li a:hover {
 }
 
 /* Page header */
-
 #page-header {
-    background-color: #6a9a22;
-    color: #ffffff;
+    background-color: olivedrab;
+    color: white;
     padding: 20px;
     text-align: center; /* text alignment 2: centre */
 }
@@ -61,84 +57,67 @@ nav ul li a:hover {
     font-style: italic; /* Font-style 1: italic */
 }
 
-/*    Main Content Area = */
-
+/* Class selector */
 .main-content {
     padding: 20px 40px;
     text-align: left; /* Text alignment 1: left */
 }
 
 /*   Headings */
-
 h2 {
-    color: #6a9a22;
-    font-size: 22px; /* Font-size 2 */
+    color: olivedrab;
+    font-size: 22px;    /* Font-size 2 */
     font-weight: bold;
-    border-bottom: 1px solid #6a9a22;
-    padding-bottom: 4px;
 }
 
 h3 {
-    color: #222222;
-    font-weight: normal; /* font-weight 2: normal */
+    color: black;
+    font-weight: normal;
     font-style: italic; /* font-style 2: italic */
     font-size: 18px;
 }
 
-/*    Paragraphs */
-
+/*    Paragrphs */
 p {
-    line-height: 1.6;
-    margin-bottom: 12px;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
-/* Center-aligned Paragraph class */
+/* Center-alignd Paragraph class */
 .align-center {
-    text-align: center; /* Text alignment 2: center */
+    text-align: center;
 }
 
-/* Right-aligned paragraph class */
+/* Right-aligned paragrph class */
 .align-right {
-    text-align: right; /* Text-alignment 3: right */
+    text-align: right;
 }
 
-/*   Lists*/
-
-/* Unordered list: Square bullets */
+/* Unordered list Square bulets */
 ul {
     list-style-type: square;
     padding-left: 24px;
 }
 
-/* Ordered list: Roman Numerals */
+/* Ordered list Roman Numerls */
 ol {
     list-style-type: upper-roman;
     padding-left: 24px;
 }
 
 
-/* Class and ID Selectors */
-
-/* Class selector */
-.highlight {
-    background-color: #fdf3e3;
-    border-left: 4px solid #6a9a22;
-    padding: 8px 12px;
-    font-weight: bold;
-}
-
 /* ID selector used for the footer section */
 #page-footer {
-    background-color: #6a9a22;
-    color: #ffffff;
+    background-color: olivedrab;
+    color: beige;
     text-align: center;
-    padding: 12px;
-    font-size: 14px;
-    margin-top: 30px;
+    padding: 10px;
+    font-size: 12px;
+    margin-top: 20px;
 }
 
 #page-footer a {
-    color: #ffd9b3;
+    color: beige;
 }
 
 /* Images */
