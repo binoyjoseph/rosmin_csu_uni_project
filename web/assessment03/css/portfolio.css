@@ -7,10 +7,10 @@ Description: External stylesheet
 
 /* Background colour applied to the entire Webpage */
 body {
-    background-color: #f5f0eb;
+    background-color: ivory;
     font-family: Arial, Helvetica, Geneva, sans-serif; /* Font-family with Four typefaces */
     font-size: 16px;
-    color: #222222;
+    color: black
     margin: 0;
     padding: 0;
 }
@@ -19,7 +19,7 @@ body {
 
 /* Horizontal navigation Containr */
 nav {
-    background-color: #6a9a22;
+    background-color: olivedrab;
     padding: 10px 0;
 }
 
@@ -36,21 +36,26 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
+    background-color: #4d7a10;
+    padding: 8px 18px;
+    border-radius: 4px;
+    display: inline-block;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #3a5c0c;
+    text-decoration: none;
 }
 
 /* Page header */
 
 #page-header {
-    background-color: #6a9a22;
-    color: #ffffff;
+    background-color: olivedrab;
+    color: white;
     padding: 20px;
     text-align: center; /* text alignment 2: centre */
 }
@@ -71,15 +76,15 @@ nav ul li a:hover {
 /*   Headings */
 
 h2 {
-    color: #6a9a22;
+    color: olivedrap;
     font-size: 22px; /* Font-size 2 */
     font-weight: bold;
-    border-bottom: 1px solid #6a9a22;
+    border-bottom: 1px solid olivedrap;
     padding-bottom: 4px;
 }
 
 h3 {
-    color: #222222;
+    color: black;
     font-weight: normal; /* font-weight 2: normal */
     font-style: italic; /* font-style 2: italic */
     font-size: 18px;
@@ -122,15 +127,15 @@ ol {
 /* Class selector */
 .highlight {
     background-color: #fdf3e3;
-    border-left: 4px solid #6a9a22;
+    border-left: 4px solid olivedrab;
     padding: 8px 12px;
     font-weight: bold;
 }
 
 /* ID selector used for the footer section */
 #page-footer {
-    background-color: #6a9a22;
-    color: #ffffff;
+    background-color: olivedrab;
+    color: white;
     text-align: center;
     padding: 12px;
     font-size: 14px;
@@ -147,4 +152,63 @@ img {
     height: auto;
     display: block;
     margin: 10px 0;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th {
+    background-color: olivedrab;
+    color: #ffffff;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #cccccc;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f0ebe4;
+}
+
+/* Print styles */
+@media print {
+    nav {
+        display: none;
+    }
+
+    body {
+        background-color: #ffffff;
+        font-size: 14pt;
+        color: black;
+    }
+
+    #page-header {
+        background-color: #ffffff;
+        color: black;
+    }
+
+    #page-footer {
+        background-color: #ffffff;
+       color: black;
+    }
+
+    #page-footer a {
+       color: black;
+    }
+
+    h2 {
+        color: black;
+        border-bottom-color: black;
+    }
+
+    .highlight {
+        border-left-color: black;
+    }
 }
