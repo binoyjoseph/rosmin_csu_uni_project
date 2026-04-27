@@ -1,9 +1,9 @@
 ## Coordinate System
 
-screen.setworldcoordinates(0, 0, WIDTH, HEIGHT) sets up the window so:
+setworldcoordinates(0, 0, WIDTH, HEIGHT)
 
-- (0, 0) is the bottom-left
-- (800, 600) is the top-right
+- set (0, 0) as the bottom-left
+- (800, 600) as the top-right
 - X increases rightward, Y increases upward
 
 ## Window & Grid Constants
@@ -47,15 +47,20 @@ Row 0 starts at TOP_Y = 520. Each row goes further down:
 
 ## Row Numbers (main.py:103)
 
+```
 y = TOP_Y - row * CELL - (row // 2) * GAP + CELL // 3
-Same formula as the spot Y, plus CELL // 3 = 18px to vertically centre the number inside the square. They're drawn at x = 400, which sits in the aisle between the two sections.
+t.write(ROWS - row, ...)
+```
+
+Identical Y formula to the spots, plus CELL // 3 = 18px to vertically centre the number inside the square. ROWS - row reverses the label so the top square (row index 0) shows 6 and the bottom square (row index 5) shows 1, giving a bottom-to-top numbering. Drawn at x = 400, sitting in the aisle between sections.
 
 ## Column Letters (main.py:109)
 
+```
 BOTTOM_Y = TOP_Y - (ROWS - 1) * CELL - ((ROWS - 1) // 2) * GAP - 35
-This computes the Y of row 5 (the last row) and subtracts 35px more to place the letters just below the bottom edge of the squares.
+```
 
-The X for each letter is LEFT_X + i * CELL + CELL // 2 — the same column X as the spot, plus half a cell to centre the letter horizontally over the square.
+This computes the Y of the last row (row index 5 → y=165) then subtracts 35 more, placing the letters at y=130, just below the bottom edge of the grid. Each letter's X is LEFT_X + i * CELL + CELL // 2 (or the right-section equivalent) — the column's X position plus half a cell to centre the letter horizontally over its square.
 
 ## Legend (main.py:125–133)
-The legend squares are hardcoded near the bottom of the window at y = 22 (squares) and y = 29 (text labels), well below the grid which ends at y=165.
+Hardcoded at y = 22 (squares) and y = 29 (text), near the very bottom of the window. These sit well below the grid (which ends at y=165) in the spare space beneath it.

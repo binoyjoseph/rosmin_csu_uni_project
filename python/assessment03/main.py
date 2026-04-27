@@ -48,11 +48,17 @@ RIGHT_X = 430   # x start of right section (G-L)
 TOP_Y = 520     # y start of top row
 
 # Main program
-# Ask user for check-in time and background colour
+
+# Ask user for check-in time
 print('Welcome to the Utopia Parking Availability Visualizer!\n')
 print('Please enter the check-in time to see parking availability')
-check_in_hour = int(input(">> Enter check-in hour (0-23):  "))
-
+check_in_hour = -1
+while (check_in_hour < 0 or check_in_hour > 23):
+    check_in_hour = int(input(">> Enter check-in hour (0-23):  "))
+    if (check_in_hour < 0 or check_in_hour > 23):
+        print("** Invalid input. Please enter a time between 0 and 23.")
+        
+# Calculate availability based on check-in time
 availability = 0
 if (check_in_hour > 0 and check_in_hour <= 6) or (check_in_hour >= 18 and check_in_hour <=23):
     availability = 80
@@ -60,22 +66,25 @@ elif check_in_hour >= 7 and check_in_hour <= 11:
     availability = 20
 elif check_in_hour >= 12 and check_in_hour <= 17:
     availability = 50
-else:
-    print("Enter a valid time: ")
+   
+# Ask user for background colour
+print('Choose a background colour (lightgrey, skyblue, yellow).')
+bg_colour = "invalid"
+while (bg_colour not in ["lightgrey", "skyblue", "yellow"]):
+    bg_colour = input(">> Background colour (default: lightgrey):") or "lightgrey"
+    if bg_colour not in ["lightgrey", "skyblue", "yellow"]:
+        print("** Invalid colour. Please choose lightgrey, skyblue or yellow.")
 
-print('Choose a background colour (lightgrey, skyblue, yellow)')
-bg_colour = input(">> Background colour (default: lightgrey):") or "lightgrey"
-if bg_colour not in ["lightgrey", "skyblue", "yellow"]:
-    print("Invalid colour choice. Defaulting to lightgrey.")
-    bg_colour = "lightgrey"
-
+# Ask user for unavailable spot colour
 print('Choose an unavailable spot colour (red, green, blue).')
-unavail_spot_colour = input(">> Enter unavailable spot colour (Default: red):") or "red"
-if unavail_spot_colour not in ["red", "green", "blue"]:
-    print("Invalid colour choice. Defaulting to red.")
-    unavail_spot_colour = "red"
+unavail_spot_colour = "invalid"
+while (unavail_spot_colour not in ["red", "green", "blue"]):
+    unavail_spot_colour = input(">> Enter unavailable spot colour (Default: red):") or "red"
+    if unavail_spot_colour not in ["red", "green", "blue"]:
+        print("** Invalid colour. Please choose red, green or blue.")
+    
 
-print("Average parking availability: ", availability, "%")
+print("Average parking availability: ",availability,"%")
 availability_percent = availability / 100
 
 # Generate 2-d list of parking spots
@@ -91,7 +100,7 @@ t = turtle.Turtle()
 t.speed(0)
 t.hideturtle()
 
-# Draw parking pots
+# Draw parking spots
 for row in range(ROWS):
     y = TOP_Y - row * CELL - (row // 2) * GAP
     for col in range(COLS):
@@ -103,9 +112,9 @@ for row in range(ROWS):
     y = TOP_Y - row * CELL - (row // 2) * GAP + CELL // 3
     t.penup()
     t.goto(400, y)
-    t.write(row + 1, align="center", font=("Arial", 14, "bold"))
+    t.write(ROWS - row, align="center", font=("Arial", 14, "bold"))
 
-# Column letters - below the grid
+# Column letters - below the grid - left section
 BOTTOM_Y = TOP_Y - (ROWS - 1) * CELL - ((ROWS - 1) // 2) * GAP - 35
 CODE_A = 65
 for i in range(6):
@@ -114,7 +123,7 @@ for i in range(6):
     letter = chr(CODE_A + i)
     t.write(letter, align="center", font=("Arial", 14, "bold"))
 
-# Column letters - right section
+# Column letters - below the grid - right section
 for i in range(6):
     t.penup()
     t.goto(RIGHT_X + i * CELL + CELL // 2, BOTTOM_Y)
