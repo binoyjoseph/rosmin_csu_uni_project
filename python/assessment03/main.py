@@ -45,7 +45,7 @@ CELL = 55       # size of each spot cell
 GAP = 40        # vertical gap between row pairs
 LEFT_X = 40     # x start of left section (A-F)
 RIGHT_X = 430   # x start of right section (G-L)
-BASE_Y = 130    # y start of bottom row
+TOP_Y = 520     # y start of top row
 
 # Main program
 # Ask user for check-in time and background colour
@@ -93,30 +93,31 @@ t.hideturtle()
 
 # Draw parking pots
 for row in range(ROWS):
-    y = BASE_Y + row * CELL + (row // 2) * GAP
+    y = TOP_Y - row * CELL - (row // 2) * GAP
     for col in range(COLS):
         x = LEFT_X + col * CELL if col < (COLS // 2) else RIGHT_X + (col - COLS // 2) * CELL
         draw_square(t, x, y, CELL, unavail_spot_colour if spots[row][col] == "unavailable"  else "white")
 
 # Row numbers between sections
 for row in range(ROWS):
-    y = BASE_Y + row * CELL + (row // 2) * GAP + CELL // 3
+    y = TOP_Y - row * CELL - (row // 2) * GAP + CELL // 3
     t.penup()
     t.goto(400, y)
     t.write(row + 1, align="center", font=("Arial", 14, "bold"))
 
-# Column letters - left section
+# Column letters - below the grid
+BOTTOM_Y = TOP_Y - (ROWS - 1) * CELL - ((ROWS - 1) // 2) * GAP - 35
 CODE_A = 65
 for i in range(6):
     t.penup()
-    t.goto(LEFT_X + i * CELL + CELL // 2, BASE_Y - 35)
+    t.goto(LEFT_X + i * CELL + CELL // 2, BOTTOM_Y)
     letter = chr(CODE_A + i)
     t.write(letter, align="center", font=("Arial", 14, "bold"))
 
 # Column letters - right section
 for i in range(6):
     t.penup()
-    t.goto(RIGHT_X + i * CELL + CELL // 2, BASE_Y - 35)
+    t.goto(RIGHT_X + i * CELL + CELL // 2, BOTTOM_Y)
     letter = chr(CODE_A + ROWS + i)
     t.write(letter, align="center", font=("Arial", 14, "bold"))
 
