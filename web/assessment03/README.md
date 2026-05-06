@@ -8,3 +8,17 @@ Use an external CSS file to format your website;
 - Printing working? use Ctrl+P -> print in the Style.CSS or Print.CSS file
 - Did you use an external CSS file to format your website; > Use only an external CSS file to format your website (there should not be any internal or inline CSS style);
 - Did you include a Logo/Icon (Topic 7)? A small logo has been added to each page so that an image appears on the tab on the browser to the left of the webpage title.
+
+Your design documentation will contain the following:
+• Concept Map - Now that you have a much better understanding of web design and
+technologies revisit the concept map of your electronic portfolio (created in your first
+ongoing assessment), this will undoubtedly lead to many improvements.
+• CSS Design - visual demonstration of CSS elements of the proposed website.
+• Navigation Map (Logical) - clearly demonstrating the navigation within your proposed
+website.
+• Structure Chart (Physical) - clearly displaying the physical structure of your proposed
+website.
+• Storyboards - You will need to build a storyboard for every webpage on your proposed
+website. You may design your own or use the storyboard template (the preferred
+option) provided in the assignments folder of CSU.
+• Testing Plan - how the proposed site is to be tested, and what are to be tested?
