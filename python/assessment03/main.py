@@ -1,25 +1,25 @@
 import turtle
 import random
 
-# Function to generate spots, 2-d list with availability and unavailability.
-# An outer loop to create rows and an inner loop to create columns within each row.
+# Function to generate spots, two dimensional list with availability and unavailability. 
 def generate_spots(rows, cols, availability):
     spots = []
+    # Outer loop to create rows.
     for i in range (rows):
         # Empty row
         row = []
+        # Inner loop to create columns within each row.
         for _ in range(cols):
             random_value = random.random()
             if random_value > availability:
                 row.append('unavailable')
             else:
                 row.append('available')
-        # end inner loop
+        # End inner loop
                 
         # Add the row to the main list
         spots.append(row)
-    # end outer loop
-    
+    # End outer loop 
     return spots
 # End function
 
@@ -30,13 +30,14 @@ def draw_square(t, x, y, size, color):
     t.pendown()
     t.fillcolor(color)
     t.begin_fill()
+    
     for _ in range(4):
         t.forward(size)
         t.left(90)
-    t.end_fill()
+    t.end_fill()    
 # End function
 
-# Constants
+# Define named constants.
 HEIGHT = 600    # height of the window
 WIDTH = 800     # width of the window
 ROWS = 6        # number of rows
@@ -47,18 +48,22 @@ LEFT_X = 40     # x start of left section (A-F)
 RIGHT_X = 430   # x start of right section (G-L)
 TOP_Y = 520     # y start of top row
 
-# Main program
+# The main program.
 
-# Ask user for check-in time
+# Ask user for check-in time and validating it.
 print('Welcome to the Utopia Parking Availability Visualizer!\n')
 print('Please enter the check-in time to see parking availability')
-check_in_hour = -1
-while (check_in_hour < 0 or check_in_hour > 23):
-    check_in_hour = int(input(">> Enter check-in hour (0-23):  "))
-    if (check_in_hour < 0 or check_in_hour > 23):
+while True:
+    try:
+        check_in_hour = int(input(">> Enter check-in hour (0-23): "))
+        if  0 <= check_in_hour <= 23:
+            break
         print("** Invalid input. Please enter a time between 0 and 23.")
-        
-# Calculate availability based on check-in time
+    except ValueError:
+        # Exception if input is not an integer.
+        print("** Invalid input. Enter a number")  
+         
+# Calculating availability based on check-in time.
 availability = 0
 if (check_in_hour > 0 and check_in_hour <= 6) or (check_in_hour >= 18 and check_in_hour <=23):
     availability = 80
@@ -67,35 +72,35 @@ elif check_in_hour >= 7 and check_in_hour <= 11:
 elif check_in_hour >= 12 and check_in_hour <= 17:
     availability = 50
    
-# Ask user for background colour
+# Ask user for background colour and validating the given colour.
+
 print('Choose a background colour (lightgrey, skyblue, yellow).')
 bg_colour = "invalid"
+
 while (bg_colour not in ["lightgrey", "skyblue", "yellow"]):
-    bg_colour = input(">> Background colour (default: lightgrey):") or "lightgrey"
+    bg_colour = input(">> Background colour [default: lightgrey]: ") or "lightgrey"
     if bg_colour not in ["lightgrey", "skyblue", "yellow"]:
         print("** Invalid colour. Please choose lightgrey, skyblue or yellow.")
 
-# Ask user for unavailable spot colour
+# Ask user for unavailable spot colour and validating the given colour.
 print('Choose an unavailable spot colour (red, green, blue).')
 unavail_spot_colour = "invalid"
+
 while (unavail_spot_colour not in ["red", "green", "blue"]):
-    unavail_spot_colour = input(">> Enter unavailable spot colour (Default: red):") or "red"
+    unavail_spot_colour = input(">> Enter unavailable spot colour [Default: red]: ") or "red"
     if unavail_spot_colour not in ["red", "green", "blue"]:
         print("** Invalid colour. Please choose red, green or blue.")
-    
-
 print("Average parking availability: ",availability,"%")
 availability_percent = availability / 100
 
-# Generate 2-d list of parking spots
+# Generate Two dimensional list of parking spots
 spots = generate_spots(ROWS, COLS, availability_percent)
 
 # Draw with turtle
 screen = turtle.Screen()
 screen.bgcolor(bg_colour)
 screen.setup(WIDTH, HEIGHT)
-screen.setworldcoordinates(0, 0, WIDTH, HEIGHT)
-
+screen.setworldcoordinates(0, 0, WIDTH, HEIGHT) # Set the screen coordinate system from (0,0) to (WIDTH, HEIGHT).
 t = turtle.Turtle()
 t.speed(0)
 t.hideturtle()
