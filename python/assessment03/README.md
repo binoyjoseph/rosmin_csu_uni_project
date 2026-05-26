@@ -8,6 +8,9 @@ setworldcoordinates(0, 0, WIDTH, HEIGHT)
 
 ## Window & Grid Constants
 
+Rows are drawn from top to bottom.
+Columns are drawn from left to right.
+
 | Constant | Value | Meaning                                                  |
 |----------|-------|----------------------------------------------------------|
 | WIDTH    | 800   | Window width in pixels                                   |
@@ -19,18 +22,25 @@ setworldcoordinates(0, 0, WIDTH, HEIGHT)
 | TOP_Y    | 520   | Y position of the top row (row 0)                        |
 
 
-## Spot Grid — X Position (main.py:98)
+## Spot Grid — X Position (main.py:112)
 
-x = LEFT_X + col * CELL           # cols 0–5  → left section
+```
+x = LEFT_X + col * CELL               # cols 0–5  → left section
 x = RIGHT_X + (col - COLS//2) * CELL  # cols 6–11 → right section
+```
+
 Columns 0–5 start at LEFT_X = 40 and step right by CELL = 55 each time.
 e.g. col 0 → x=40, col 1 → x=95, col 5 → x=315
 Columns 6–11 mirror the same logic but start at RIGHT_X = 430, with the index offset back to 0–5.
 e.g. col 6 → x=430, col 11 → x=705
-The gap between x=315+55=370 and x=430 is 60px — the visual aisle between the two sections.
-Spot Grid — Y Position (main.py:96)
+The gap between x=315+55=370 and x=430 is 60px — the gap between the two sections.
 
+## Spot Grid — Y Position (main.py:110)
+
+```
 y = TOP_Y - row * CELL - (row // 2) * GAP
+```
+
 row * CELL steps downward by 55px for each row.
 (row // 2) * GAP inserts an extra 40px gap after every pair of rows, creating three visual row-groups (rows 0–1, 2–3, 4–5).
 Row 0 starts at TOP_Y = 520. Each row goes further down:
@@ -44,8 +54,7 @@ Row 0 starts at TOP_Y = 520. Each row goes further down:
 | 4   | 220      | 80           | 220 |
 | 5   | 275      | 80           | 165 |
 
-
-## Row Numbers (main.py:103)
+## Row numbers between sections (main.py:117)
 
 ```
 y = TOP_Y - row * CELL - (row // 2) * GAP + CELL // 3
@@ -54,13 +63,27 @@ t.write(ROWS - row, ...)
 
 Identical Y formula to the spots, plus CELL // 3 = 18px to vertically centre the number inside the square. ROWS - row reverses the label so the top square (row index 0) shows 6 and the bottom square (row index 5) shows 1, giving a bottom-to-top numbering. Drawn at x = 400, sitting in the aisle between sections.
 
-## Column Letters (main.py:109)
+Row numbers are numbered top-bottom from 6,5,4,3,2,1.
+
+## Column letters - below the grid (main.py:123)
 
 ```
+(ROWS - 1) * CELL           # ?? Why 5 * 55
+((ROWS - 1) // 2) * GAP     # ?? Why 2 * 40
+
 BOTTOM_Y = TOP_Y - (ROWS - 1) * CELL - ((ROWS - 1) // 2) * GAP - 35
 ```
 
-This computes the Y of the last row (row index 5 → y=165) then subtracts 35 more, placing the letters at y=130, just below the bottom edge of the grid. Each letter's X is LEFT_X + i * CELL + CELL // 2 (or the right-section equivalent) — the column's X position plus half a cell to centre the letter horizontally over its square.
+This computes the Y of the last row (row index 5 → y=165) then subtracts 35 more, placing the letters at y=130, just below the bottom edge of the grid. 
 
-## Legend (main.py:125–133)
+```
+LEFT_X + i * CELL + CELL // 2
+RIGHT_X + i * CELL + CELL // 2
+```
+
+Each letter's X is LEFT_X or RIGHT_X + i * CELL + CELL // 2 — the column's X position plus half a cell to centre the letter horizontally over its square.
+
+Columns are named from A,B,C...K,L.
+
+## Legend (main.py:139–148)
 Hardcoded at y = 22 (squares) and y = 29 (text), near the very bottom of the window. These sit well below the grid (which ends at y=165) in the spare space beneath it.
