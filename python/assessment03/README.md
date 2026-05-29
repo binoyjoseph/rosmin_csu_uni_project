@@ -29,11 +29,11 @@ x = LEFT_X + col * CELL               # cols 0–5  → left section
 x = RIGHT_X + (col - COLS//2) * CELL  # cols 6–11 → right section
 ```
 
-Columns 0–5 start at LEFT_X = 40 and step right by CELL = 55 each time.
-e.g. col 0 → x=40, col 1 → x=95, col 5 → x=315
-Columns 6–11 mirror the same logic but start at RIGHT_X = 430, with the index offset back to 0–5.
-e.g. col 6 → x=430, col 11 → x=705
-The gap between x=315+55=370 and x=430 is 60px — the gap between the two sections.
+- Columns 0–5 start at LEFT_X = 40 and step right by CELL = 55 each time.
+- e.g. col 0 → x=40, col 1 → x=95, col 5 → x=315
+- Columns 6–11 mirror the same logic but start at RIGHT_X = 430, with the index offset back to 0–5.
+- e.g. col 6 → x=430, col 11 → x=705
+- The gap between x=315+55=370 and x=430 is 60px — the gap between the two sections.
 
 ## Spot Grid — Y Position (main.py:110)
 
