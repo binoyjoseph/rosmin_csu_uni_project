@@ -25,6 +25,16 @@ As your program starts, it should prompt the user for the dataset file name and 
 
 The details of how the system should work are provided in the sample run video, which will be available in the subject site. Review the sample run to clearly understand all the requirements.
 
+### Menu Option 4
+
+For Option 4, you need to calculate and display the average stay duration for each date. The sample output should look like as below:
+```
+Date     Average stay duration (hour:minute)
+-------------------------------------------------
+01/04/2025            4:30
+02/04/2025            5:50
+```
+
 Your program must handle invalid inputs gracefully. At a minimum, it should manage the following situations:
 - Incorrect file names
 - Incorrect record formats (skip invalid records)
