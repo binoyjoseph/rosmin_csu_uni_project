@@ -1,0 +1,314 @@
+/*
+portfolio.css
+Author: Rosmin Roy
+Date: 30 May 2026
+Description:
+    External stylesheet for the Rosmin Roy portfolio (Assessment 4).
+    Used by every HTML page in the site (no inline or internal CSS).
+    Includes screen styles, the newsletter signup form styles, and
+    a print stylesheet (hides navigation, removes backgrounds, larger font).
+*/
+
+/* Universal selector: consistent box-sizing across the whole site */
+* {
+    box-sizing: border-box;
+}
+
+/* Background colour applied to the entire Webpage */
+body {
+    background-color: ivory;
+    /* Font-family with Four typefaces */
+    font-family: Arial, Helvetica, Geneva, sans-serif;
+    font-size: 16px;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar */
+
+/* Horizontal navigation Containr */
+nav {
+    background-color: olivedrab;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #4d7a10;
+    padding: 8px 18px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: darkgreen;
+    text-decoration: none;
+}
+
+/* Page header */
+
+#page-header {
+    background-color: olivedrab;
+    color: white;
+    padding: 20px;
+    text-align: center; /* Text alignment 2: centre */
+}
+
+#page-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-style: italic; /* Font-style 1: italic */
+}
+
+/*    Main Content Area = */
+
+.main-content {
+    padding: 20px 40px;
+    text-align: left; /* Text alignment 1: left */
+}
+
+/*   Headings */
+
+h2 {
+    color: olivedrab;
+    font-size: 22px; /* Font-size 2 */
+    font-weight: bold;
+    border-bottom: 1px solid olivedrab;
+    padding-bottom: 4px;
+}
+
+h3 {
+    color: black;
+    font-weight: normal; /* font-weight 2: normal */
+    font-style: italic; /* font-style 2: italic */
+    font-size: 18px;
+}
+
+/*    Paragraphs */
+
+p {
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* Center-aligned Paragraph class */
+.align-center {
+    text-align: center; /* Text alignment 2: center */
+}
+
+/* Right-aligned paragrph class */
+.align-right {
+    text-align: right; /* Text-alignment 3: right */
+}
+
+/*   Lists*/
+
+/* Unordered list: Square bullets */
+ul {
+    list-style-type: square;
+    padding-left: 24px;
+}
+
+/* Ordered list: Roman Numerals */
+ol {
+    list-style-type: upper-roman;
+    padding-left: 24px;
+}
+
+/* ID selector used for the footer section */
+#page-footer {
+    background-color: olivedrab;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+#page-footer a {
+    color: #ffd9b3;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Table */
+table {
+    width: 100%;
+}
+
+table th {
+    background-color: olivedrab;
+    color: white;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid black;
+}
+
+
+/* Inline code snippets used on the Web Skills page */
+code {
+    background-color: #f0eedb;
+    padding: 1px 5px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+}
+
+/* Call-to-action link used to open the signup form in a new tab */
+.cta-link {
+    display: inline-block;
+    background-color: olivedrab;
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #4d7a10;
+}
+
+.cta-link:hover {
+    background-color: darkgreen;
+}
+
+/* Newsletter signup form styling - pure CSS, no inline styles in the HTML */
+form#signupForm {
+    max-width: 600px;
+    background-color: #f7f4e1;
+    border: 1px solid olivedrab;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+}
+
+form#signupForm label {
+    font-weight: bold;
+}
+
+/* Text-style inputs and the textarea get a consistent look */
+form#signupForm input[type="text"],
+form#signupForm input[type="email"],
+form#signupForm textarea {
+    padding: 6px 8px;
+    border: 1px solid #8a8a4a;
+    font-family: Arial, Helvetica, Geneva, sans-serif;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+form#signupForm textarea {
+    /* Stops users dragging the textarea outside the form box */
+    resize: vertical;
+}
+
+/* Group the radio button and checkbox sets visually */
+form#signupForm fieldset {
+    border: 1px solid olivedrab;
+    background-color: #fffdf2;
+    padding: 10px 15px;
+    margin: 12px 0;
+}
+
+form#signupForm legend {
+    font-weight: bold;
+    color: olivedrab;
+    padding: 0 6px;
+}
+
+/* Submit and Reset buttons */
+.form-buttons input[type="submit"],
+.form-buttons input[type="reset"] {
+    background-color: olivedrab;
+    color: white;
+    border: 1px solid #4d7a10;
+    padding: 8px 22px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.form-buttons input[type="submit"]:hover,
+.form-buttons input[type="reset"]:hover {
+    background-color: darkgreen;
+}
+
+/* Visual marker next to required fields */
+.required-marker {
+    color: #b30000;
+    font-weight: bold;
+}
+
+/* Print styles */
+@media print {
+    /* Print without a navigation bar */
+    nav {
+        display: none;
+    }
+
+    /** Remove background colour and larger font size */
+    body {
+        background-color: white;
+        /** pt for print media and larger font size */
+        font-size: 14pt;
+        color: black;
+    }
+
+    #page-header {
+        background-color: white;
+        color: black;
+    }
+
+    #page-footer {
+        background-color: white;
+       color: black;
+    }
+
+    #page-footer a {
+       color: black;
+    }
+
+    h2 {
+        color: black;
+        border-bottom-color: black;
+    }
+
+    .highlight {
+        border-left-color: black;
+    }
+
+    /* Flatten the form for print: no green backgrounds, plain borders */
+    form#signupForm,
+    form#signupForm fieldset {
+        background-color: white;
+        border: 1px solid black;
+    }
+
+    form#signupForm legend,
+    .cta-link {
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+    }
+}

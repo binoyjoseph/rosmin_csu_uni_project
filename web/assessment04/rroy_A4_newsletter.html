@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Newsletter Signup Form for Verdant Web Solutions Pty Ltd. -->
+    <!-- Author: Rosmin Roy -->
+    <!-- Date: 30 May 2026 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Search-engine ready meta description -->
+    <meta name="description" content="Sign up for the Verdant Web Solutions newsletter to receive updates on web development, design, and hosting services.">
+
+    <!-- Page title -->
+    <title>Newsletter Signup - Verdant Web Solutions</title>
+
+    <!-- Favicon / Logo -->
+    <link rel="icon" type="image/png" href="images/profile.png">
+
+    <!-- Pure-CSS styling, loaded from the external stylesheet (no inline / internal CSS) -->
+    <link rel="stylesheet" href="css/portfolio.css">
+
+    <!-- External JavaScript file: keeps the markup clean and the JS reusable -->
+    <script src="js/newsletter.js"></script>
+</head>
+
+<!--
+    onload calls the welcome-alert function defined in js/newsletter.js.
+    This satisfies the requirement that the welcome message must be shown
+    via an alert when the signup page is loaded.
+-->
+<body onload="showWelcomeAlert();">
+
+    <!-- Page Header (matches the rest of the portfolio for a consistent look) -->
+    <div id="page-header">
+        <h1>Verdant Web Solutions</h1>
+        <p>Newsletter Signup</p>
+    </div>
+
+    <!-- Main-content section -->
+    <div class="main-content">
+
+        <h2>Subscribe to Our Newsletter</h2>
+
+        <!-- Instructive information for the user -->
+        <p>
+            Fill in the form below to join the Verdant Web Solutions mailing list.
+            Fields marked with <span class="required-marker">*</span> are
+            <strong>required data</strong>. We will never share your details with a third party.
+        </p>
+
+        <!--
+            HTML5 form.
+            - method="post"   : data is submitted using POST (per the spec).
+            - action="..."    : a placeholder server-side endpoint. The marker can
+                                replace this with their own URL if they want to
+                                inspect the posted data; the validation in JS still
+                                runs first.
+            - onsubmit        : calls the external validation function. The
+                                'return' keyword is important - if the function
+                                returns false the form will not be sent.
+        -->
+        <form name="signupForm"
+              id="signupForm"
+              method="post"
+              action="https://httpbin.org/post"
+              onsubmit="return validateSignupForm(this);">
+
+            <!-- First Name: required, max 60 characters -->
+            <p>
+                <label for="firstName">
+                    First Name <span class="required-marker">*</span>
+                </label><br>
+                <input type="text"
+                       id="firstName"
+                       name="firstName"
+                       maxlength="60"
+                       size="40"
+                       placeholder="e.g. Rosmin">
+            </p>
+
+            <!-- Last Name: required, max 60 characters -->
+            <p>
+                <label for="lastName">
+                    Last Name <span class="required-marker">*</span>
+                </label><br>
+                <input type="text"
+                       id="lastName"
+                       name="lastName"
+                       maxlength="60"
+                       size="40"
+                       placeholder="e.g. Roy">
+            </p>
+
+            <!-- Email Address: HTML5 email input, max 60 characters -->
+            <p>
+                <label for="email">
+                    Email Address
+                </label><br>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       maxlength="60"
+                       size="40"
+                       placeholder="you@example.com">
+            </p>
+
+            <!-- Age range: 5 radio buttons (only one can be selected) -->
+            <fieldset>
+                <legend>Age Range</legend>
+                <label><input type="radio" name="ageRange" value="15-25"> 15 - 25</label><br>
+                <label><input type="radio" name="ageRange" value="26-35"> 26 - 35</label><br>
+                <label><input type="radio" name="ageRange" value="36-45"> 36 - 45</label><br>
+                <label><input type="radio" name="ageRange" value="46-55"> 46 - 55</label><br>
+                <label><input type="radio" name="ageRange" value="55+">    55+   </label>
+            </fieldset>
+
+            <!--
+                Services / areas of operation: 5 checkboxes.
+                These mirror the five services offered by Verdant Web Solutions,
+                so the marketing team can segment subscribers by interest.
+            -->
+            <fieldset>
+                <legend>Which services are you interested in? (tick any that apply)</legend>
+                <label><input type="checkbox" name="services" value="web-development"> Web Development</label><br>
+                <label><input type="checkbox" name="services" value="ux-ui-design"> UX / UI Design</label><br>
+                <label><input type="checkbox" name="services" value="ecommerce"> E-commerce Solutions</label><br>
+                <label><input type="checkbox" name="services" value="seo-marketing"> SEO &amp; Digital Marketing</label><br>
+                <label><input type="checkbox" name="services" value="cloud-hosting"> Cloud Hosting</label>
+            </fieldset>
+
+            <!-- Free-text comments: text area, 60 cols x 3 rows minimum -->
+            <p>
+                <label for="comments">Tell us briefly what you would like to read about:</label><br>
+                <textarea id="comments"
+                          name="comments"
+                          cols="60"
+                          rows="3"
+                          placeholder="Anything specific you would like our newsletter to cover..."></textarea>
+            </p>
+
+            <!-- Submit + Reset buttons -->
+            <p class="form-buttons">
+                <input type="submit" value="Sign Me Up">
+                <input type="reset" value="Clear Form">
+            </p>
+        </form>
+
+        <!-- Helpful link back to the portfolio (opens the same tab) -->
+        <p>
+            <a href="rroy_A4_web_skills.html">&larr; Back to Web Skills</a>
+        </p>
+
+    </div>
+    <!-- End main-content div -->
+
+    <!-- Page Footer -->
+    <div id="page-footer">
+        <p>
+            &copy; 2026 Verdant Web Solutions Pty Ltd. (fictitious company used for ITC293 Assessment 4).
+        </p>
+    </div>
+
+</body>
+
+</html>
