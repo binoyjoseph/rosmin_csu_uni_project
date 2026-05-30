@@ -54,6 +54,7 @@ def is_valid_date(date_str):
     # Check that month is between 1 and 12 and day is between 1 and 31
     if month < 1 or month > 12:
         return False
+    # Note: This does not check for the correct number of days in each month
     if day < 1 or day > 31:
         return False
     return True
@@ -103,6 +104,7 @@ def parse_record(line):
     or None if the line is blank or does not match the required format.
     """
     line = line.strip()
+    # Reject blank lines silently
     if line == "":
         return None
     parts = line.split(DELIMITER)
