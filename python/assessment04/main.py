@@ -40,6 +40,7 @@ def is_valid_plate(plate):
 
 def is_valid_date(date_str):
     """Return True if date_str matches yyyy/mm/dd with valid ranges."""
+    # Split the date string by "/" and check that we get exactly 3 parts (year, month, day)
     parts = date_str.split("/")
     if len(parts) != 3:
         return False
@@ -139,7 +140,7 @@ def parse_record(line):
 def load_data(file_name):
     """
     Open the file and return (records, invalid_count). Lets the caller catch
-    FileNotFoundError / OSError so file-name errors can be reported cleanly.
+    FileNotFoundError / OSError so file-name errors can be reported.
     """
     # The data structure for records is a list of tuples
     records = []
@@ -162,7 +163,7 @@ def load_data(file_name):
 
 
 def prompt_dataset():
-    """Repeatedly prompt for a dataset file name until it can be loaded."""
+    """Repeatedly prompt for a dataset file name until it is a valid file"""
     while True:
         file_name = safe_input(">> Enter dataset filename: ").strip()
         if file_name == "":
@@ -174,21 +175,22 @@ def prompt_dataset():
             print(f"** Error: File not found.")
             continue
         except OSError:
-            print(f"** Error: Could not open file '{file_name}'. Please try again.")
+            print(f"** Error: Could not open file.")
             continue
 
-        if invalid_count > 0:
-            print(f"** Skipped {invalid_count} invalid record(s) in the file.")
         print(f" Loaded {len(records)} record(s) "
               f"from {file_name}.")
+        if invalid_count > 0:
+            print(f"** Skipped {invalid_count} invalid record(s) in the file.")
         return records
 
 
 def safe_input(prompt):
     """Wrap input() so EOF returns the exit code rather than crashing."""
     try:
+        # Program must not crash, regardless of the user input.
         return input(prompt)
-    except EOFError:
+    except (EOFError):
         # Treat unexpected EOF as a request to exit the program gracefully
         print()
         return 5  # The exit code for the menu loop
@@ -226,7 +228,7 @@ def licence_plate_history(records):
         print(f"No records found for this licence plate.")
         return
 
-    # Sort by date then check-in time for a tidy chronological listing
+    # Sort by date then check-in time
     matches.sort(key=operator.itemgetter(IDX_DATE, IDX_CHECKIN))
     display_records(matches)
 
@@ -243,7 +245,7 @@ def peak_hours_analysis(records):
     # Create a list of 24 integers initialized to zero to count the number of parked vehicles for each hour (0-23)
     hour_counts = [0] * 24  # Initialize counts for each hour to zero
     for record in records:
-        # Get the hour part of the check-in time by integer division of the check-in time by 100 (e.g., 0830 // 100 = 8)
+        # Get the hour part of the check-in time with integer division by 100 (e.g., 0830 // 100 = 8)
         checkin_hour = record[IDX_CHECKIN] // 100
         # Increment the count for each hour in that range
         hour_counts[checkin_hour] += 1
@@ -272,8 +274,8 @@ def daily_revenue(records):
     dates = sorted(set(record[IDX_DATE] for record in records))
 
     # Build a dictionary mapping selection numbers to dates for easy lookup after user input
-    # The key is the string of the number (e.g., "1") and the value is the corresponding date (e.g., "2024/01/15")
     # Each dictionary item is key:value pairs like "1":"2024/01/15", "2":"2024/01/16", etc.
+    # The key is the string of the number (e.g., "1") and the value is the corresponding date (e.g., "2024/01/15")
     # enumerate(dates) generates pairs of (index, date) for each date in the sorted list of unique dates
     numbered_dates = {str(i + 1): date for i, date in enumerate(dates)}
     
@@ -288,9 +290,6 @@ def daily_revenue(records):
         print("** Invalid selection.")
         return
     date = numbered_dates[number]
-    if not is_valid_date(date):
-        print("** Invalid format. Please use yyyy/mm/dd.")
-        return
 
     # Calculate total fees for the selected date by iterating through all records 
     # and summing the fees for records that match the date
@@ -383,7 +382,7 @@ def run_menu(records):
 
 
 def main():
-    """Program entry point: load the dataset and start the menu loop."""
+    """Main function to load the dataset and start the menu loop."""
     print("Welcome to the Parking Data Analysis Program!\n")
     try:
         records = prompt_dataset()
