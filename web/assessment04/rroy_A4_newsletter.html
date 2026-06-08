@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <!-- Newsletter Signup Form for Verdant Web Solutions Pty Ltd. -->
+    <!-- Newsletter Signup Form -->
     <!-- Author: Rosmin Roy -->
     <!-- Date: 30 May 2026 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Search-engine ready meta description -->
-    <meta name="description" content="Sign up for the Verdant Web Solutions newsletter to receive updates on web development, design, and hosting services.">
+    <meta name="description" content="Sign up for the Verdant Web Solutions newsletter to receive updates on web development.">
 
     <!-- Page title -->
     <title>Newsletter Signup - Verdant Web Solutions</title>
@@ -17,21 +17,17 @@
     <!-- Favicon / Logo -->
     <link rel="icon" type="image/png" href="images/profile.png">
 
-    <!-- Pure-CSS styling, loaded from the external stylesheet (no inline / internal CSS) -->
+    <!-- External CSS style code -->
     <link rel="stylesheet" href="css/portfolio.css">
 
-    <!-- External JavaScript file: keeps the markup clean and the JS reusable -->
+    <!-- External JavaScript file -->
     <script src="js/newsletter.js"></script>
 </head>
 
-<!--
-    onload calls the welcome-alert function defined in js/newsletter.js.
-    This satisfies the requirement that the welcome message must be shown
-    via an alert when the signup page is loaded.
--->
+<!-- onload calls the showWelcomeAlert function defined in js/newsletter.js. -->
 <body onload="showWelcomeAlert();">
 
-    <!-- Page Header (matches the rest of the portfolio for a consistent look) -->
+    <!-- Page Header -->
     <div id="page-header">
         <h1>Verdant Web Solutions</h1>
         <p>Newsletter Signup</p>
@@ -46,19 +42,14 @@
         <p>
             Fill in the form below to join the Verdant Web Solutions mailing list.
             Fields marked with <span class="required-marker">*</span> are
-            <strong>required data</strong>. We will never share your details with a third party.
+            <strong>required data</strong>.
         </p>
 
         <!--
             HTML5 form.
-            - method="post"   : data is submitted using POST (per the spec).
-            - action="..."    : a placeholder server-side endpoint. The marker can
-                                replace this with their own URL if they want to
-                                inspect the posted data; the validation in JS still
-                                runs first.
-            - onsubmit        : calls the external validation function. The
-                                'return' keyword is important - if the function
-                                returns false the form will not be sent.
+            - method="post" : form data is submitted using POST.
+            - action        : server-side endpoint.
+            - onsubmit      : calls the external validation function.
         -->
         <form name="signupForm"
               id="signupForm"
@@ -70,33 +61,34 @@
             <p>
                 <label for="firstName">
                     First Name <span class="required-marker">*</span>
-                </label><br>
+                </label>
+                <br>
                 <input type="text"
                        id="firstName"
                        name="firstName"
                        maxlength="60"
-                       size="40"
-                       placeholder="e.g. Rosmin">
+                       size="40">
             </p>
 
             <!-- Last Name: required, max 60 characters -->
             <p>
                 <label for="lastName">
                     Last Name <span class="required-marker">*</span>
-                </label><br>
+                </label>
+                <br>
                 <input type="text"
                        id="lastName"
                        name="lastName"
                        maxlength="60"
-                       size="40"
-                       placeholder="e.g. Roy">
+                       size="40">
             </p>
 
             <!-- Email Address: HTML5 email input, max 60 characters -->
             <p>
                 <label for="email">
                     Email Address
-                </label><br>
+                </label>
+                <br>
                 <input type="email"
                        id="email"
                        name="email"
@@ -112,13 +104,11 @@
                 <label><input type="radio" name="ageRange" value="26-35"> 26 - 35</label><br>
                 <label><input type="radio" name="ageRange" value="36-45"> 36 - 45</label><br>
                 <label><input type="radio" name="ageRange" value="46-55"> 46 - 55</label><br>
-                <label><input type="radio" name="ageRange" value="55+">    55+   </label>
+                <label><input type="radio" name="ageRange" value="55+"> 55+</label>
             </fieldset>
 
             <!--
-                Services / areas of operation: 5 checkboxes.
-                These mirror the five services offered by Verdant Web Solutions,
-                so the marketing team can segment subscribers by interest.
+                Services of operation: 5 checkboxes.
             -->
             <fieldset>
                 <legend>Which services are you interested in? (tick any that apply)</legend>
@@ -135,18 +125,19 @@
                 <textarea id="comments"
                           name="comments"
                           cols="60"
-                          rows="3"
-                          placeholder="Anything specific you would like our newsletter to cover..."></textarea>
+                          rows="3">
+                </textarea>
             </p>
 
-            <!-- Submit + Reset buttons -->
+            <!-- Submit and Reset buttons -->
             <p class="form-buttons">
                 <input type="submit" value="Sign Me Up">
                 <input type="reset" value="Clear Form">
             </p>
         </form>
 
-        <!-- Helpful link back to the portfolio (opens the same tab) -->
+        <!-- Helpful link back to the portfolio -->
+        <!-- character entity for left arrow -->
         <p>
             <a href="rroy_A4_web_skills.html">&larr; Back to Web Skills</a>
         </p>
@@ -157,7 +148,7 @@
     <!-- Page Footer -->
     <div id="page-footer">
         <p>
-            &copy; 2026 Verdant Web Solutions Pty Ltd. (fictitious company used for ITC293 Assessment 4).
+            &copy; 2026 Verdant Web Solutions Pty Ltd.
         </p>
     </div>
 
