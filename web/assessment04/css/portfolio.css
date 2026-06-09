@@ -2,11 +2,7 @@
 portfolio.css
 Author: Rosmin Roy
 Date: 30 May 2026
-Description:
-    External stylesheet for the Rosmin Roy portfolio (Assessment 4).
-    Used by every HTML page in the site (no inline or internal CSS).
-    Includes screen styles, the newsletter signup form styles, and
-    a print stylesheet (hides navigation, removes backgrounds, larger font).
+Description: External stylesheet
 */
 
 /* Universal selector: consistent box-sizing across the whole site */
